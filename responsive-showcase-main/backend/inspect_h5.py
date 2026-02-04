@@ -2,9 +2,9 @@ import h5py
 
 def print_structure(name, obj):
     if isinstance(obj, h5py.Dataset):
-        print(f"📄 {name} - {obj.shape}")
+        print(f"[FILE] {name} - {obj.shape}")
     else:
-        print(f"📂 {name}")
+        print(f"[DIR] {name}")
 
 print("Inspecting emotion_model.h5...")
 with h5py.File("emotion_model.h5", "r") as f:

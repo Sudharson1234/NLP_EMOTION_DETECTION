@@ -17,10 +17,10 @@ try:
     session = ort.InferenceSession("emotion_model.onnx", providers=['CPUExecutionProvider'])
     input_name = session.get_inputs()[0].name
     output_name = session.get_outputs()[0].name
-    print(f"✅ ONNX model loaded! Input: {input_name}, Output: {output_name}")
+    print(f"[OK] ONNX model loaded! Input: {input_name}, Output: {output_name}")
     print(f"   Input shape: {session.get_inputs()[0].shape}")
 except Exception as e:
-    print(f"❌ Failed to load ONNX model: {e}")
+    print(f"[ERROR] Failed to load ONNX model: {e}")
     session = None
 
 # FERPlus emotions (8 classes)
@@ -100,7 +100,7 @@ def predict():
         emotion = emotion_labels[max_index]
         confidence = float(probabilities[max_index] * 100)
         
-        print(f"✅ Detected: {emotion} ({confidence:.1f}%)")
+        print(f"[OK] Detected: {emotion} ({confidence:.1f}%)")
 
         return jsonify({
             "face_detected": True,

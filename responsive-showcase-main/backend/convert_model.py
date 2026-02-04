@@ -21,7 +21,7 @@ video, img { width:100%; max-height:320px; }
 
 <body>
 
-<h2>🧠 EmotiSense – Emotion Detection</h2>
+<h2>EmotiSense – Emotion Detection</h2>
 
 <div>
   <input type="file" id="fileInput" hidden accept="image/*">

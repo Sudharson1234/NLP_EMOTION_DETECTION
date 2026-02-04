@@ -18,4 +18,4 @@ input_signature = [tf.TensorSpec([1, 64, 64, 1], tf.float32, name='input')]
 onnx_model, _ = tf2onnx.convert.from_keras(model, input_signature=input_signature)
 onnx.save(onnx_model, "emotion_model.onnx")
 
-print("✅ Saved emotion_model.onnx successfully!")
+print("[OK] Saved emotion_model.onnx successfully!")

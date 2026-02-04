@@ -77,6 +77,6 @@ if __name__ == "__main__":
     print("Saving to emotion_model.h5...")
     save_weights_to_h5(weights, 'emotion_model.h5')
     
-    print("✅ Model weights created successfully!")
+    print("[OK] Model weights created successfully!")
     print("   The model now has properly initialized weights.")
     print("   Predictions will be more meaningful (but still need real training for accuracy).")

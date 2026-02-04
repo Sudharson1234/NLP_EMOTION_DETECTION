@@ -17,4 +17,4 @@ tflite_model = converter.convert()
 with open("emotion_model.tflite", "wb") as f:
     f.write(tflite_model)
 
-print("✅ Saved emotion_model.tflite successfully!")
+print("[OK] Saved emotion_model.tflite successfully!")

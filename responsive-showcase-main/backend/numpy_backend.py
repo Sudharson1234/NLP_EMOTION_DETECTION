@@ -21,7 +21,7 @@ class SimpleNumpyModel:
                 # Robust Loading Logic
                 g_weights = f['model_weights']
                 layer_names = sorted(list(g_weights.keys()))
-                print(f"📂 Found layers in H5: {layer_names}")
+                print(f"[INFO] Found layers in H5: {layer_names}")
 
                 conv_layers = []
                 dense_layers = []
@@ -65,7 +65,7 @@ class SimpleNumpyModel:
                 if len(conv_layers) < 2 or len(dense_layers) < 2:
                     raise ValueError(f"Expected at least 2 conv and 2 dense layers. Found {len(conv_layers)} conv, {len(dense_layers)} dense.")
                     
-                print(f"✅ Loaded {len(conv_layers)} Conv layers and {len(dense_layers)} Dense layers.")
+                print(f"[OK] Loaded {len(conv_layers)} Conv layers and {len(dense_layers)} Dense layers.")
 
                 self.W_conv1, self.b_conv1 = conv_layers[0][1], conv_layers[0][2]
                 self.W_conv2, self.b_conv2 = conv_layers[1][1], conv_layers[1][2]
@@ -73,7 +73,7 @@ class SimpleNumpyModel:
                 self.W_dense2, self.b_dense2 = dense_layers[1][1], dense_layers[1][2]
                 
         except Exception as e:
-            print(f"❌ Failed to load weights: {e}")
+            print(f"[ERROR] Failed to load weights: {e}")
             raise e
 
 

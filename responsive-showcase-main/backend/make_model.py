@@ -26,4 +26,4 @@ model.compile(
 # Save clean working model
 model.save("emotion_model.h5")
 
-print("✅ New clean emotion_model.h5 created successfully!")
+print("[OK] New clean emotion_model.h5 created successfully!")
