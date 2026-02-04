@@ -94,11 +94,10 @@ def predict():
     face = gray[y1:y2, x1:x2]
     face = cv2.resize(face, (48, 48))
 
-    # IMPORTANT FIX: convert to 3 channels
-    face = cv2.cvtColor(face, cv2.COLOR_GRAY2RGB)
-
+    # face is grayscale (48, 48)
     face = face / 255.0
-    face = np.expand_dims(face, axis=0)  # (1,48,48,3)
+    face = np.expand_dims(face, axis=-1)  # (48, 48, 1)
+    face = np.expand_dims(face, axis=0)   # (1, 48, 48, 1)
 
     prediction = model.predict(face, verbose=0)[0]
     max_index = int(np.argmax(prediction))
